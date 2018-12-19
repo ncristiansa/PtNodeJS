@@ -1,6 +1,12 @@
+var fs = require('fs')
+var path = require('path')
 
-filtrado(process.argv[2], process.argv[3], function (error, dato){
-	dato.forEach(function (fichero){
-		console.log(fichero);
-	})
+module.exports = function(dir, filterStr, callback){
+	fs.readdir(dir, function (err list){
+		if(err)
+			return callback(err)
+		list = list.filter(function (file){
+			return path.extname(file)=== '.' + filterStr
 })
+}
+}
