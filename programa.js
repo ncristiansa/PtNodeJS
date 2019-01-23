@@ -15,7 +15,7 @@ function especial(text, port, callback){
         callback(text);
     }).listen(port);
 }
-especial('texto', 8080, especial2);
+especial('Hola Mundo', 8080, especial2);
 var count = 0;
 function especial2(req){
 
